@@ -6,7 +6,6 @@ def readFile():
     file.close()
 
     content = content.splitlines()
-#    smallcontent = [l.split(',') for l in ','.join(content).split(';')]
     return [l.split(',') for l in ','.join(content).split(';')]
 
 
@@ -41,6 +40,6 @@ def backupFile():
 
 def addToFile(c):
     file = open(filename, "a")
-    file.write(";" + c)
+    file.write(";" + c + ",0")
     file.close()
     return True

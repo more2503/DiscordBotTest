@@ -1,2 +1,0 @@
-def checkusername(username):
-    if
