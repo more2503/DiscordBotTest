@@ -1,26 +1,31 @@
+filename = "test.txt"
+
 def readFile():
-    file = open("test.txt", "r")
+    file = open(filename, "r")
     content = file.read()
     file.close()
-    return content
+
+    content = content.splitlines()
+#    smallcontent = [l.split(',') for l in ','.join(content).split(';')]
+    return [l.split(',') for l in ','.join(content).split(';')]
 
 
 def writeFile(c):
-    file = open("test.txt", "w")
+    file = open(filename, "w")
     file.write(c)
     file.close()
     return True
 
 
 def resetFile():
-    file = open("test.txt", "w")
+    file = open(filename, "w")
     file.write()
     file.close()
     return True
 
 
 def backupFile():
-    file = open("test.txt", "r")
+    file = open(filename, "r")
     copy = file.read()
     file.close()
 
@@ -31,9 +36,11 @@ def backupFile():
     backupfile.write(copy)
     backupfile.close()
 
+    return True
+
 
 def addToFile(c):
-    file = open("test.txt", "a")
-    file.write("\n" + c)
+    file = open(filename, "a")
+    file.write(";" + c)
     file.close()
     return True

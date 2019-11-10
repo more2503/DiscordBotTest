@@ -1,2 +1,1 @@
-username: more2503; level: 1
-username: Nigglas; level: 0
+more,1;King_Neptun,0;wolfsen,10;Ich hab 3 Beine,2

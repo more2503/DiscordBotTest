@@ -21,7 +21,17 @@ async def _8ball(ctx, *, question):
     await ctx.send(f'Question: {question}\nAnswer: {random.choice(response)}')
 
 @client.command()
-async def file(ctx):
-    await ctx.send(f'{filemanagement.readFile()}')
+async def username(ctx):
+    await ctx.send(ctx.message.author.name)
 
-client.run('NjQyODc3MzQ2OTQ0Mzg1MDM2.XcdUbQ.6YDddivbSOwEaRIhRqQHFGzfL6Q')
+@client.command()
+async def file(ctx):
+
+    for i in range(len(filemanagement.readFile())):
+        if filemanagement.readFile()[i][0] == ctx.message.author.name:
+            output = filemanagement.readFile()[i][1]
+
+    await ctx.send(f'Du bist Level: {output}')
+
+
+client.run('NjQyODc3MzQ2OTQ0Mzg1MDM2.XciB3A._Qu89E9nAdny0ITd0J3dvnaQWJE')
