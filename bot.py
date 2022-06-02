@@ -29,10 +29,8 @@ async def _8ball(ctx, *, question):
 async def newuser(ctx):
     if usermanagement.addNewUser(ctx.message.author.name):
         await ctx.send(f'Dein Account wurde erstellt, ' + ctx.message.author.name)
-    elif usermanagement.addNewUser(ctx.message.author.name) == False:
+    else usermanagement.addNewUser(ctx.message.author.name) == False:
         await ctx.send(f'Du hast bereits einen Account!')
-    else:
-        await ctx.send(f'Discord ist gay')
 
 @client.command()
 async def username(ctx):
